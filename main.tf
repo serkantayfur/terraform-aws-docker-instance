@@ -43,8 +43,9 @@ resource "aws_instance" "tfmyec2" {
   vpc_security_group_ids = [aws_security_group.tf-sec-gr.id]
   user_data = data.template_file.userdata.rendered
   tags = {
-    Name = var.tag
+    "Name" = var.tag
   }
+  
 }
 
 resource "aws_security_group" "tf-sec-gr" {
